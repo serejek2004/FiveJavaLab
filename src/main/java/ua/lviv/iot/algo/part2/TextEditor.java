@@ -20,8 +20,8 @@ public final class TextEditor {
         String stringToEdit = "String to edit but it not important for our goal";
         String firstFragment = "it";
         String secondFragment = "ing";
-        var test = new TextEditor();
-        stringToEdit = test.textEditor(stringToEdit, firstFragment, secondFragment);
+        var editor = new TextEditor();
+        stringToEdit = editor.textEditor(stringToEdit, firstFragment, secondFragment);
         System.out.println(stringToEdit);
     }
 }
