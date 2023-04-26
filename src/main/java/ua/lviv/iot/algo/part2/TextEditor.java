@@ -15,13 +15,4 @@ public final class TextEditor {
 
         return stringToEdit;
     }
-
-    public static void main(String... args) {
-        String stringToEdit = "String to edit but it not important for our goal";
-        String firstFragment = "it";
-        String secondFragment = "ing";
-        var editor = new TextEditor();
-        stringToEdit = editor.textEditor(stringToEdit, firstFragment, secondFragment);
-        System.out.println(stringToEdit);
-    }
 }
