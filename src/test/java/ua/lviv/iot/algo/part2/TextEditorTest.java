@@ -6,38 +6,31 @@ import static org.junit.Assert.assertEquals;
 
 public class TextEditorTest {
     public String stringToEdit;
-    public String firstFragment;
-    public String secondFragment;
     public String expectedString;
+    String[] fragments = {"is", "oo"};
     TextEditor testTextEditor = new TextEditor();
 
     @Test
     public void textEditorIfStringEmpty() {
         stringToEdit = "";
-        firstFragment = "if";
-        secondFragment = "ing";
-        stringToEdit = testTextEditor.textEditor(stringToEdit, firstFragment, secondFragment);
+        stringToEdit = testTextEditor.textEditor(stringToEdit, fragments);
         assertEquals(stringToEdit.length(), 0);
     }
 
     @Test
     public void textEditorIfStringHasFragments() {
         stringToEdit = "This animal looks so cool";
-        firstFragment = "is";
-        secondFragment = "oo";
         expectedString = " animal  so ";
-        stringToEdit = testTextEditor.textEditor(stringToEdit, firstFragment, secondFragment);
+        stringToEdit = testTextEditor.textEditor(stringToEdit, fragments);
         assertEquals(expectedString, stringToEdit);
     }
 
     @Test
     public void textEditorIfStringHasNotFragments() {
         stringToEdit = "This animal looks so cool";
-        firstFragment = "it";
-        secondFragment = "ing";
+        String[] anyFragments = {"it", "ing"};
         expectedString = stringToEdit;
-        stringToEdit = testTextEditor.textEditor(stringToEdit, firstFragment, secondFragment);
+        stringToEdit = testTextEditor.textEditor(stringToEdit, anyFragments);
         assertEquals(expectedString, stringToEdit);
     }
-
 }
