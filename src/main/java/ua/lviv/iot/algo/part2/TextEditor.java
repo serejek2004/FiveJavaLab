@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 public final class TextEditor {
     public String textEditor(String stringToEdit, String[] fragments) {
         for (String currentFragment : fragments) {
-            Pattern firstPattern = Pattern.compile("\\b\\w*" + currentFragment + "\\w*\\b");
-            Matcher firstMatcher = firstPattern.matcher(stringToEdit);
-            stringToEdit = firstMatcher.replaceAll("");
+            Pattern patternForDelFragments = Pattern.compile("\\b\\w*" + currentFragment + "\\w*\\b");
+            Matcher matcherForDelFragments = patternForDelFragments.matcher(stringToEdit);
+            stringToEdit = matcherForDelFragments.replaceAll("");
         }
         return stringToEdit;
     }
